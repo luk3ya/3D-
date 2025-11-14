@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3D Model Gesture Control (System UI)</title>
+    
+    <link rel="stylesheet" href="style.css">
+    
+    <script type="module" src="https://ajax.googleapis.com/ajax/libs/model-viewer/4.0.0/model-viewer.min.js"></script>
+    
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/hands/hands.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/camera_utils/camera_utils.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@mediapipe/drawing_utils/drawing_utils.js" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    
+    <div class="hidden-webcam-container">
+        <video class="input_video" id="webcam"></video>
+        <canvas class="output_canvas" width="1280px" height="720px"></canvas>
+    </div>
+    
+    <h1>[ 板手模型 ]</h1>
+    
+    <model-viewer 
+        alt="扳手模型" 
+        src="res/wrench.glb" 
+        ar 
+        shadow-intensity="1" 
+        camera-controls 
+        touch-action="none" 
+        camera-orbit="0deg 75deg 0.7m" 
+        id="myModel">
+    </model-viewer>
+
+    <div class="instructions">
+        <p><span class="accent-text">&gt; STATUS: READY</span></p>
+        <p><span class="accent-text">&gt; INPUT:</span> PINCH (ROTATE) | OPEN HAND (TRANSLATE) | DUAL-HAND (ZOOM)</p>
+    </div>
+    
+    <script type="module" src="script.js"></script>
+</body>
+</html>

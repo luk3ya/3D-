@@ -1,0 +1,76 @@
+/* 系統 UI 風格：高對比、科技藍/青色、邊框強調 */
+:root {
+    --color-dark: #0A0A0A; /* 更深的背景 */
+    --color-text: #E0E0E0;
+    --color-accent: #00BFFF; /* 科技藍 */
+    --color-border: #0066AA; /* 深藍邊框 */
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    /* 選擇等寬字體，增強命令提示符的科技感 */
+    font-family: 'Consolas', 'Courier New', monospace;
+}
+
+body {
+    background-color: var(--color-dark);
+    color: var(--color-text); 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    min-height: 100vh;
+    padding: 20px;
+}
+
+h1 {
+    color: var(--color-accent); 
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 1.8em;
+    font-weight: normal;
+    letter-spacing: 3px;
+    /* 模仿命令提示符的閃爍效果 */
+    text-shadow: 0 0 5px var(--color-accent); 
+}
+
+model-viewer {
+    background-color: #1A1A1A; 
+    width: 85vw;
+    height: 70vh;
+    border-radius: 0; /* 移除圓角，強調邊界 */
+    border: 1px solid var(--color-border); /* 實線邊框 */
+    /* 藍色發光效果 */
+    box-shadow: 0 0 15px rgba(0, 191, 255, 0.4); 
+    margin-bottom: 20px;
+}
+
+/* 底部系統操作提示框 */
+.instructions {
+    margin-top: 30px;
+    padding: 15px;
+    background-color: #1A1A1A;
+    border: 1px dashed var(--color-border); /* 虛線邊框 */
+    width: 85vw;
+    max-width: 700px;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+
+.instructions p {
+    margin: 3px 0;
+}
+
+.accent-text {
+    color: var(--color-accent);
+}
+
+/* 隱藏攝影機相關元素 */
+.hidden-webcam-container {
+    display: none;
+}
+.input_video, .output_canvas {
+    display: none;
+}
